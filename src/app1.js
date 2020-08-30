@@ -3,7 +3,7 @@ const express = require('express')
 const hbs = require('hbs')
 
 const app = express()
-
+const port = process.env.PORT || 4000
 const publicDirectoryPath = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'./Template/views')
 const partialPaths = path.join(__dirname,'./Template/partials')
@@ -56,6 +56,6 @@ app.get('/weather',(req,res) =>{
     //     forecastData
     // })
 })
-app.listen(4000,() =>{
+app.listen(port,() =>{
     console.log('Server is up on port 4000')
 })
